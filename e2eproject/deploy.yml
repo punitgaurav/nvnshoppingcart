@@ -1,4 +1,4 @@
-- name: Create tomcat AWS infrastructure
+  - name: Create tomcat AWS infrastructure
   hosts: localhost
   connection: local
   roles:
@@ -17,12 +17,12 @@
 
   tasks:
   
-   - copy:
-       src: /var/lib/jenkins/workspace/shopping-cart/target/nvnshoppingcart.war 
-       dest: /usr/local/apache-tomcat-8.0.23/webapps/
-       mode: 0777
-       owner: root
-       group: root
+  - copy:
+      src: /var/lib/jenkins/workspace/shopping-cart/target/nvnshoppingcart.war
+      dest: /usr/local/apache-tomcat-8.0.23/webapps/
+      mode: 0777
+      owner: root
+      group: root
 
   - name: start tomcat service
     become: true
